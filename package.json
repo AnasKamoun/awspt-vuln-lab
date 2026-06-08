@@ -1,0 +1,23 @@
+{
+  "name": "awspt-vuln-lab-frontend",
+  "version": "1.0.0",
+  "description": "Intentionally vulnerable npm manifest (old CVE-bearing pins) for SCA testing",
+  "private": true,
+  "dependencies": {
+    "lodash": "4.17.4",
+    "axios": "0.21.0",
+    "minimist": "1.2.0",
+    "jsonwebtoken": "8.5.0",
+    "express": "4.16.0",
+    "handlebars": "4.0.11",
+    "node-forge": "0.10.0",
+    "marked": "0.3.6",
+    "moment": "2.19.3",
+    "ws": "5.2.0",
+    "serialize-javascript": "2.1.0",
+    "ejs": "2.6.1",
+    "y18n": "4.0.0",
+    "qs": "6.5.1",
+    "node-fetch": "2.6.0"
+  }
+}
