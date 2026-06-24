@@ -1,0 +1,20 @@
+# DECOYS — a correct scan reports ZERO secret findings from this file. It is the
+# negative control: it proves awspt's false-positive guards work (placeholder
+# filter, Shannon-entropy gate, secret-reference awareness). The real/positive
+# secrets live in the other config/* files; nothing here should ever fire.
+
+# 1. Secret *references*, not literals — expanded at runtime, never a real value:
+aws_secret: "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+db_password_from_env: "$DB_PASSWORD"
+
+# 2. Low-entropy values under secret-shaped UPPER_SNAKE names — env_secret matches
+#    the shape, but the entropy gate drops them (too little real randomness):
+SESSION_TOKEN: abababababababababababab
+LOGIN_SECRET: 12121212121212121212
+
+# 3. Documented placeholders (incl. AWS's own published example key id):
+example_key: "AKIAIOSFODNN7EXAMPLE"
+your_api_key: "your-api-key-here"
+
+# 4. A content / integrity hash, not a credential:
+bundle_integrity: "sha512-Ab9Cd8Ef7Gh6Ij5Kl4Mn3Op2Qr1St0Uv9Wx8Yz=="
